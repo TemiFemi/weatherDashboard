@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header class="jumbotron bg-primary">
+        <h1>The Weather Dashboard</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <h6>Search for a city</h6>
+                <input id="userinput" type="text" />
+                <button id="forecastbutton" class="btn btn-primary">SEARCH</button>
+                <div class="previous-search"></div>
+            </div>
+            <div class="col-md-9">
+                <div id="currentforecast"></div>
+                <div id="fivedayforecast"></div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 id="city" class="card-title"></h5>
+                                <h5 id="weatherIcon" class="card-title"></h5>
+                                <h5 id="currentday" class="card-title"></h5>
+                                <p id="currenttemp" class="card-text">Temperature:</p>
+                                <p id="currentwind" class="card-text">Wind Speed:</p>
+                                <p id="currenthumidity" class="card-text">Humidity:</p>
+                                <p id="currentuv" class="card-text">UV Index:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="dayone" class="col-2"></div>
+                    <div id="daytwo" class="col-2"></div>
+                    <div id="daythree" class="col-2"></div>
+                    <div id="dayfour" class="col-2"></div>
+                    <div id="dayfive" class="col-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
