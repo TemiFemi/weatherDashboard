@@ -3,15 +3,15 @@ var myArray = localStorage.getItem("city")
     : [];
 // function to display search history
 function displayHistory() {
-    $(".previous-search").empty();
+    $(".lastSearch").empty();
     for (var i = 0; i < myArray.length; i++) {
         var cityHistory = $(
-            `<a href="#" class="previous-search-item previous-search-item-action w-100"></a>`
+            `<a href="#" class="lastSearch-item lastSearch-item-action w-100"></a>`
         );
         cityHistory.text(myArray[i]);
-        $(".previous-search").prepend(cityHistory);
+        $(".lastSearch").prepend(cityHistory);
     }
-    $(".previous-search-item").on("click", function () {
+    $(".lastSearch-item").on("click", function () {
         var cityName = $(this).text();
         todayWeather(cityName);
         fiveDayForecast(cityName);
@@ -52,7 +52,7 @@ function todayWeather(currentWeather) {
     });
 }
 // User weather button
-$("#forecastbutton").on("click", function (event) {
+$("#buttonForecast").on("click", function (event) {
     event.preventDefault();
     var currentCity = $("#userinput").val();
     console.log(currentCity);
@@ -151,9 +151,8 @@ function fiveDayForecast(cityName) {
   </div>`);
     });
 }
-
 // Function to display last searched city when the application loads
-function lastSearch() {
+function previousSearch() {
     var cityKey = JSON.parse(localStorage.getItem("city"));
     var cityOnPage = cityKey[cityKey.length - 1];
     console.log(cityOnPage);
@@ -161,4 +160,4 @@ function lastSearch() {
     todayWeather(cityOnPage);
     fiveDayForecast(cityOnPage);
 }
-lastSearch();
+previousSearch();
